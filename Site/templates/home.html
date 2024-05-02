@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Welcome, {{ username }}!</h2>
+    <p>You are logged in. <a href="{% url 'logout' %}">Logout</a></p>
+
+    <h3>Search Posts</h3>
+    <form method="get">
+        <input type="text" name="q" placeholder="Search by title or content">
+        <input type="text" name="city" placeholder="Search by city">
+        <input type="date" name="start_date">
+        <input type="date" name="end_date">
+        <button type="submit">Search</button>
+    </form>
+
+    <h3>Recent Posts</h3>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <strong>{{ post.title }}</strong><br>
+                {{ post.content }}<br>
+                <em>City:</em> {{ post.city }}, <em>Travel Date:</em> {{ post.travel_date }}<br>
+                <em>Author:</em> {{ post.author.username }}<br>
+                <em>Posted on:</em> {{ post.created_at }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'create_post' %}">Create Post</a>
+</body>
+</html>
