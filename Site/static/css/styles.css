@@ -1,0 +1,64 @@
+/* Set background image for the entire page */
+body {
+    background-image: url('{% static "images/signup_cover.jpg" %}');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Set the height of the background to the viewport height */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox for centering content vertically */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+/* Define styles for the signup container */
+.signup-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 100px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+/* Define styles for the sign-up form */
+.signup-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 100px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    text-align: center; /* Center align the form content */
+}
+.signup-form .form-group {
+    margin-bottom: 20px;
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-form .btn-signup {
+    display: block;
+    width: auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.signup-form .btn-signup:hover {
+    background-color: #0056b3;
+}
+
